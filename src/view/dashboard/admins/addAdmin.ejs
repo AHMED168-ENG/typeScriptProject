@@ -12,11 +12,11 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/admin/dashpored">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="/admin/dashpored">main </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="/admin/users/"> الاعضاء </a>
+                                <li class="breadcrumb-item"><a href="/admin/users/"> admins </a>
                                 </li>
-                                <li class="breadcrumb-item active">إضافة ادمن جديد
+                                <li class="breadcrumb-item active">add new admin
                                 </li>
                             </ol>
                         </div>
@@ -30,7 +30,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> إضافة ادمن </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> add admin</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -45,16 +45,16 @@
                                 <%- include("../includes/notification") %> 
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form enctype="multipart/form-data" class="form" method="post" >
+                                        <form enctype="multipart/form-data" class="form" method="post"  >
                                             <div class="form-body main">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الادمن </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> admin information</h4>
 
                                                 <div class="row main">
                                                     
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم الاول </label>
-                                                            <input type="text" class="form-control" placeholder="ادخل اسم الاول" name="fName">
+                                                            <label for="projectinput1"> first name</label>
+                                                            <input value="<%= bodyData.fName %>" type="text" class="form-control" placeholder="enter the first name" name="fName">
                                                             <% if (validationError) { %>
                                                                 <% if (validationError.fName) { %>
                                                                     <span class="text-danger"><%=validationError.fName[0].msg %></span>
@@ -65,8 +65,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم الاخير</label>
-                                                            <input type="text" class="form-control" placeholder="ادخل الاسم الاخير" name="lName">
+                                                            <label for="projectinput1"> last name</label>
+                                                            <input  value="<%= bodyData.lName %>" type="text" class="form-control" placeholder="enter the last name" name="lName">
                                                             <% if (validationError) { %>
                                                                 <% if (validationError.lName) { %>
                                                                     <span class="text-danger"><%=validationError.lName[0].msg %></span>
@@ -77,8 +77,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> العمر </label>
-                                                            <input type="number" class="form-control" placeholder="ادخل العمر" name="age">
+                                                            <label for="projectinput1"> age </label>
+                                                            <input  value="<%= bodyData.age %>" type="number" class="form-control" placeholder="enter age" name="age">
                                                             <% if (validationError) { %>
                                                                 <% if (validationError.age) { %>
                                                                     <span class="text-danger"><%=validationError.age[0].msg %></span>
@@ -89,8 +89,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الايميل </label>
-                                                            <input type="text" class="form-control" placeholder="ادخل الايميل الخاص بك" name="email">
+                                                            <label for="projectinput1"> email </label>
+                                                            <input  value="<%= bodyData.email %>" type="text" class="form-control" placeholder="enter your email" name="email">
                                                             <% if (validationError) { %>
                                                                 <% if (validationError.email) { %>
                                                                     <span class="text-danger"><%=validationError.email[0].msg %></span>
@@ -101,8 +101,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الرقم السري </label>
-                                                            <input type="password" class="form-control" placeholder="ادخل الرقم السري" name="password">
+                                                            <label for="projectinput1"> password</label>
+                                                            <input  value="<%= bodyData.password %>" type="password" class="form-control" placeholder="enter password" name="password">
                                                             <% if (validationError) { %>
                                                                 <% if (validationError.password) { %>
                                                                     <span class="text-danger"><%=validationError.password[0].msg %></span>
@@ -113,8 +113,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الرقم السري مره اخري </label>
-                                                            <input type="password" class="form-control" placeholder="ادخل الرقم مره اخري" name="confirmPassword">
+                                                            <label for="projectinput1">password again</label>
+                                                            <input value="<%= bodyData.confirmPassword %>" type="password" class="form-control" placeholder="enter password again" name="confirmPassword">
                                                             <% if (validationError) { %>
                                                                 <% if (validationError.confirmPassword) { %>
                                                                     <span class="text-danger"><%=validationError.confirmPassword[0].msg %></span>
@@ -125,10 +125,25 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> العنوان </label>
-                                                            <input type="text" class="form-control" placeholder="ادخل العنوان" name="addres">
+                                                            <label for="projectinput1"> addres </label>
+                                                            <input value="<%= bodyData.addres %>" type="text" class="form-control" placeholder="enter addres" name="addres">
                                                             <% if (validationError) { %>
                                                                 <% if (validationError.addres) { %>
+                                                                    <span class="text-danger"><%=validationError.addres[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> gender </label>
+                                                            <select type="text" class="form-control"  name="gender">
+                                                                <option value="1" <%= bodyData.gender == "1" ? "selected" : "" %>>man</option>
+                                                                <option value="0" <%= bodyData.gender == "0" ? "selected" : "" %>>woman</option>
+                                                            </select>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.gender) { %>
                                                                     <span class="text-danger"><%=validationError.addres[0].msg %></span>
                                                                 <% } %>
                                                             <% } %>
@@ -137,8 +152,8 @@
                                                     
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الموبايل </label>
-                                                            <input type="number" class="form-control" placeholder="ادخل الموبايل الخاص بك" name="mobile">
+                                                            <label for="projectinput1"> mobile </label>
+                                                            <input  value="<%= bodyData.mobile %>" type="number" class="form-control" placeholder="enter your mobile" name="mobile">
                                                             <% if (validationError) { %>
                                                                 <% if (validationError.mobile) { %>
                                                                     <span class="text-danger"><%=validationError.mobile[0].msg %></span>
@@ -150,9 +165,9 @@
                                                
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="projectinput2"> صوره المستخدم </label>
+                                                            <label for="projectinput2"> user image</label>
                                                             <div class="custom-file">
-                                                                <input type="file" name="image" class="custom-file-input">
+                                                                <input type="file" multiple name="image" class="custom-file-input">
                                                                 <label class="custom-file-label">Choose file</label>
                                                             </div>
                                                             <% if (validationError) { %>
@@ -160,6 +175,7 @@
                                                                     <span class="text-danger"><%=validationError.image[0].msg %></span>
                                                                 <% } %>
                                                             <% } %>
+                                                     
                                                         </div>
                                                     </div>
 
@@ -169,9 +185,10 @@
                                                             <input type="checkbox" name="active"
                                                                 value="1"
                                                                 class="switch "
+                                                                <%= bodyData.active ? "checked" : "" %>
                                                                 />
                                                             <label
-                                                                class="card-title ml-1">الحالة </label>
+                                                                class="card-title ml-1">state </label>
                                                         </div>
                                                     </div>
 
@@ -180,7 +197,7 @@
 
 
                                             <button type="submit" class="btn btn-primary col-12">
-                                                <i class="la la-check-square-o"></i> حفظ
+                                                <i class="la la-check-square-o"></i> save
                                             </button>
                                         </form>
 

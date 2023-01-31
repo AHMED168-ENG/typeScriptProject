@@ -1,0 +1,28 @@
+error: validationResult is not a function {"timestamp":"2023-01-22T17:32:09.419Z"}
+error: validationResult is not a function {"timestamp":"2023-01-22T17:33:16.117Z"}
+error: validationResult is not a function {"timestamp":"2023-01-22T17:33:32.606Z"}
+error: Cannot read properties of undefined (reading 'length') {"timestamp":"2023-01-23T09:18:24.024Z"}
+error: Cannot read properties of undefined (reading 'length') {"timestamp":"2023-01-23T09:19:04.046Z"}
+error: Cannot read properties of undefined (reading 'length') {"timestamp":"2023-01-23T09:35:44.156Z"}
+error: Cannot read properties of undefined (reading 'length') {"timestamp":"2023-01-23T09:37:14.560Z"}
+error: Cannot read properties of undefined (reading 'length') {"timestamp":"2023-01-23T09:39:22.264Z"}
+error: Cannot read properties of undefined (reading 'length') {"timestamp":"2023-01-23T09:53:14.571Z"}
+error: fs is not defined {"timestamp":"2023-01-23T12:31:52.727Z"}
+error: Cannot access 'body' before initialization {"timestamp":"2023-01-23T15:29:30.415Z"}
+error: admins is not defined {"timestamp":"2023-01-23T16:56:49.540Z"}
+error: The "cb" argument must be of type function. Received undefined {"timestamp":"2023-01-23T16:57:07.655Z"}
+error: The "path" argument must be of type string. Received type function ([Function (anonymous)]) {"timestamp":"2023-01-23T16:57:40.982Z"}
+error: The "path" argument must be of type string. Received type function ([Function (anonymous)]) {"timestamp":"2023-01-23T16:58:05.422Z"}
+error: The "path" argument must be of type string. Received type function ([Function (anonymous)]) {"timestamp":"2023-01-23T16:58:11.458Z"}
+error: Table 'deep_diving.tbl_admins' doesn't exist {"timestamp":"2023-01-24T08:20:47.333Z"}
+error: Table 'deep_diving.tbl_courses' doesn't exist {"timestamp":"2023-01-24T13:44:17.712Z"}
+error: Table 'deep_diving.tbl_courses' doesn't exist {"timestamp":"2023-01-24T13:44:26.520Z"}
+error: Table 'deep_diving.tbl_courses' doesn't exist {"timestamp":"2023-01-24T13:47:32.929Z"}
+error: Table 'deep_diving.tbl_courses' doesn't exist {"timestamp":"2023-01-24T13:47:44.785Z"}
+error: ENOENT: no such file or directory, unlink 'src\assets\dashboard\images\Courses\751d7bb37f41b1bbdd2be2a3c76ff53d' {"timestamp":"2023-01-24T14:38:33.644Z"}
+error: ENOENT: no such file or directory, unlink 'src\assets\dashboard\images\Courses\4960aff49995369ba3de0896fc97cbb6' {"timestamp":"2023-01-24T14:40:36.321Z"}
+error: ENOENT: no such file or directory, unlink 'src\assets\dashboard\images\Carosals\b698f52d2c277845541cc917d4b533df' {"timestamp":"2023-01-25T08:44:03.464Z"}
+error: ENOENT: no such file or directory, unlink 'src\assets\dashboard\images\Carosals\7d7d5d28ec6c17b7721e04065ecdb054' {"timestamp":"2023-01-25T08:46:16.339Z"}
+error: result is not defined {"timestamp":"2023-01-25T09:29:18.893Z"}
+error: factStatus is not defined {"timestamp":"2023-01-29T14:30:29.061Z"}
+error: tbl_instructors is not defined {"timestamp":"2023-01-30T15:51:11.553Z"}

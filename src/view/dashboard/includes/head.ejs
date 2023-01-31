@@ -17,15 +17,16 @@
     />
     <meta name="author" content="PIXINVENT" />
     <title><%= title %></title>
+    <% if (lang == "ar") { %>
     <link
       rel="apple-touch-icon"
       href="/public/dashboard/images/ico/apple-icon-120.png"
     />
-    <link
+    <!-- <link
       rel="shortcut icon"
       type="image/x-icon"
       href="/public/dashboard/images/ico/favicon.ico"
-    />
+    /> -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
       rel="stylesheet"
@@ -105,6 +106,106 @@
       href="/public/dashboard/Tagging-System-Autocomplete-Amsify-Suggestags/css/amsify.suggestags.css"
       rel="stylesheet"
     />
+    <% } else { %>
+    <link
+      rel="apple-touch-icon"
+      href="/public/dashboard/images/ico/apple-icon-120.png"
+    />
+    <!-- <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/public/dashboard/images/ico/favicon.ico"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/css/vendors.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/vendors/css/weather-icons/climacons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/fonts/meteocons/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/vendors/css/charts/morris.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/vendors/css/charts/chartist.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/vendors/css/charts/chartist-plugin-tooltip.css"
+    />
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN MODERN CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/css/app.css"
+    />
+    <!-- END MODERN CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/css/core/menu/menu-types/vertical-menu.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/css/core/colors/palette-gradient.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/fonts/simple-line-icons/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/css/core/colors/palette-gradient.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/css/pages/timeline.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/app-assets/css/pages/dashboard-ecommerce.css"
+    />
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/dashboard/assets/css/style.css"
+    />
+    <% } %>
 
     <style>
       body {
@@ -150,10 +251,8 @@
     </style>
   </head>
 
-  <body
-    class="vertical-layout vertical-menu 2-columns chat-application menu-expanded fixed-navbar"
-    data-open="click"
-    data-menu="vertical-menu"
-    data-col="2-columns"
-  ></body>
+<body class="vertical-layout vertical-menu 2-columns chat-application menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+
 </html>
+
+<!-- vertical-layout vertical-menu 2-columns chat-application menu-expanded fixed-navbar  -->

@@ -1,4 +1,27 @@
 <!-- Begin Header -->
+<style>
+  .language,
+  .language ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .language li img {
+    width: 30px;
+    height: 20px;
+    margin: 0 5px;
+  }
+  .language li {
+    opacity: 0.3;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .language li.active {
+    opacity: 1;
+  }
+</style>
 <nav
   class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-info navbar-shadow"
 >
@@ -17,7 +40,7 @@
               alt="modern admin logo"
               src="/assets/dashboard/images/logo/logo.png"
             />
-            <h3 class="brand-text">Modern Admin</h3>
+            <h3 class="brand-text"><%= navLocalization("dashboard") %></h3>
           </a>
         </li>
         <li class="nav-item d-md-none">
@@ -52,19 +75,20 @@
               data-toggle="dropdown"
             >
               <span class="mr-1"
-                >مرجبا <%= adminData.fName %> <%= adminData.lName %>
+                ><%= navLocalization("hi") %> <%= adminData.fName %> <%=
+                adminData.lName %>
                 <span class="user-name text-bold-700"></span>
               </span>
               <span class="avatar avatar-online">
                 <% if (adminData.image) { %>
                 <img
                   style="height: 35px"
-                  src="/assets/dashboard/images/users_photo/<%= adminData.image.split('--')[0] %>"
+                  src="/assets/dashboard/images/admins/<%= adminData.image.split('--')[0] %>"
                   alt="avatar" />
                 <% } else { %>
                 <img
                   style="height: 35px"
-                  src="/assets/dashboard/images/users_photo/images.jpg"
+                  src="/assets/dashboard/images/admins/avatar.png"
                   alt="avatar" />
                 <% } %>
                 <i></i
@@ -72,21 +96,32 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href=""
-                ><i class="ft-user"></i> تعديل الملف الشحصي
+                ><i class="ft-user"></i> <%= navLocalization("editMyData") %>
               </a>
               <div class="dropdown-divider"></div>
-              <form method="post" action="/admin/logOut">
+              <form method="post" action="/dashboard/logout">
                 <button
                   class="dropdown-item"
                   style="cursor: pointer; outline: 0"
                 >
-                  <i class="ft-power"></i> تسجيل الخروج
+                  <i class="ft-power"></i> <%= navLocalization("logOut") %>
                 </button>
               </form>
             </div>
           </li>
 
-          <li class="dropdown dropdown-notification nav-item">
+          <!-- <li class="language">
+            <ul class="list-unstyled">
+              <li dataLang="ar" class="<%= lang == "ar" ? "active" : "" %>">
+              <img src="/assets/dashboard/images/flags/eg.png" alt=""
+            /></li>
+            <li  dataLang="eng" class="<%= lang == "eng" ? "active" : "" %>">
+              <img src="/assets/dashboard/images/flags/pre.png" alt=""
+            /></li>
+            </ul>
+          </li> -->
+
+          <!-- <li class="dropdown dropdown-notification nav-item">
             <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"
               ><i class="ficon ft-bell"></i>
               <span
@@ -341,7 +376,7 @@
                 >
               </li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

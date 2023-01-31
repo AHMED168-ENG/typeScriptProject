@@ -1,0 +1,162 @@
+<%- include("../includes/head") %> 
+
+
+
+    <%- include("../includes/main-header") %> 
+    <%- include("../includes/aside") %> 
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-6 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/admin/dashpored">main </a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="/admin/users/"> instructors </a>
+                                </li>
+                                <li class="breadcrumb-item active">add instructor
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Basic form layout section start -->
+                <section id="basic-form-layouts">
+                    <div class="row match-height">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title" id="basic-layout-form"> add instructor </h4>
+                                    <a class="heading-elements-toggle"><i
+                                            class="la la-ellipsis-v font-medium-3"></i></a>
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <%- include("../includes/notification") %> 
+                                <div class="card-content collapse show">
+                                    <div class="card-body">
+                                        <form enctype="multipart/form-data" class="form" method="post"  >
+                                            <div class="form-body main">
+                                                <h4 class="form-section"><i class="ft-home"></i> instructor information </h4>
+
+                                                <div class="row main">
+                                                    
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> name </label>
+                                                            <input value="<%= bodyData.name %>" type="text" class="form-control" placeholder=" title in arabic" name="name">
+                                                             <% if (validationError.name) { %>
+                                                                <span class="text-danger"><%=validationError.name[0].msg %></span>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">jop in arabic</label>
+                                                            <input  value="<%= bodyData.jop_ar %>" type="text"  class="form-control"  name="jop_ar">
+                                                            <% if (validationError.jop_ar) { %>
+                                                                    <span class="text-danger"><%=validationError.jop_ar[0].msg %></span>
+                                                                <% } %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">jop in english</label>
+                                                            <input  value="<%= bodyData.jop_en %>" type="text"  class="form-control"  name="jop_en">
+                                                            <% if (validationError.jop_en) { %>
+                                                                    <span class="text-danger"><%=validationError.jop_en[0].msg %></span>
+                                                                <% } %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">facebook link</label>
+                                                            <input  value="<%= bodyData.facebook_link %>" type="text"  class="form-control"  name="facebook_link">
+                                                            <% if (validationError.facebook_link) { %>
+                                                                    <span class="text-danger"><%=validationError.facebook_link[0].msg %></span>
+                                                                <% } %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">twitter link</label>
+                                                            <input  value="<%= bodyData.twitter_link %>" type="text"  class="form-control"  name="twitter_link">
+                                                            <% if (validationError.twitter_link) { %>
+                                                                    <span class="text-danger"><%=validationError.twitter_link[0].msg %></span>
+                                                                <% } %>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">instagram link</label>
+                                                            <input  value="<%= bodyData.instagram_link %>" type="text"  class="form-control"  name="instagram_link">
+                                                            <% if (validationError.instagram_link) { %>
+                                                                    <span class="text-danger"><%=validationError.instagram_link[0].msg %></span>
+                                                                <% } %>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2"> instructor photo</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" multiple name="image" class="custom-file-input">
+                                                                <label class="custom-file-label">Choose file</label>
+                                                            </div>
+                                                            <% if (validationError.image) { %>
+                                                                <span class="text-danger"><%=validationError.image[0].msg %></span>
+                                                            <% } %>
+                                                     
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mt-1">
+                                                            <input type="checkbox" name="active"
+                                                                value="1"
+                                                                class="switch "
+                                                                checked
+                                                                />
+                                                            <label
+                                                                class="card-title ml-1">state </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" class="btn btn-primary col-12">
+                                                <i class="la la-check-square-o"></i> save
+                                            </button>
+                                        </form>
+
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Basic form layout section end -->
+            </div>
+        </div>
+    </div>
+    <%- include("../includes/footerScript") %> 
+    <%- include("../includes/footer") %> 
+</body>
+</html>

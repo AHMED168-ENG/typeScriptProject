@@ -1,5 +1,9 @@
 <%- include("../includes/head") %> 
-
+    <style> 
+    .dataTables_scrollBody {
+        overflow: visible !important;
+    }
+    </style>
     <%- include("../includes/main-header") %> 
     <%- include("../includes/aside") %> 
 
@@ -7,13 +11,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> كل الادمن </h3>
+                    <h3 class="content-header-title"> all admins</h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/admin/dashpored">الرئيسية</a>
+                                <li class="breadcrumb-item"><a href="/admin/dashpored">main</a>
                                 </li>
-                                <li class="breadcrumb-item active"> كل الادمن
+                                <li class="breadcrumb-item active"> all admins
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +31,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">جميع الادمن في الموقع </h4>
+                                    <h4 class="card-title">all admins in site</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -42,18 +46,17 @@
                                 <%- include("../includes/notification") %> 
 
                                 <div class="card-content collapse show">
-                                    <div class="card-body card-dashboard">
-                                        <table
+                                    <div class="card-body card-dashboard ">
+                                        <table 
                                             class="table display nowrap table-striped table-bordered scroll-horizontal " style="width:100%">
                                             <thead>
                                             <tr>
-                                                <th> الاسم</th>
-                                                <th>الايميل</th>
-                                                <th>الصوره</th>
-                                                <th>الحاله</th>
-                                                <th>هل ادمن</th>
-                                                <th>هل تاجر</th>
-                                                <th>الإجراءات</th>
+                                                <th> name</th>
+                                                <th>email</th>
+                                                <th>mobile</th>
+                                                <th>image</th>
+                                                <th>state</th>
+                                                <th>action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -61,36 +64,34 @@
                                                  <tr>
                                                         <td><%= element.fName %> <%= element.lName %></td>
                                                         <td class="chang"><p><%= element.email %></p></td></td>
+                                                        <td class="chang"><p><%= element.mobile %></p></td></td>
                                                         <% if (element.image) { %>
-                                                            <td><img style="width:70px ; height:70px" src="/admin/asset/images/users_photo/<%= element.image.split("--")[0] %>" alt=""></td>
+                                                            <td><img style="width:70px ; height:70px" src="/assets/dashboard/images/admins/<%= element.image.split("--")[0] %>" alt=""></td>
                                                         <% } else { %>
-                                                            <td><img style="width:70px ; height:70px" src="/admin/asset/images/users_photo/avatar.png" alt=""></td>
+                                                            <td><img style="width:70px ; height:70px" src="/assets/dashboard/images/admins/avatar.png" alt=""></td>
                                                         <%}%>
                                                         <td><%= element.active ? "active" : "notActive" %></td>
-                                                        <td><%= element.isAdmin ? "admin" : "notAdmin" %></td>
-                                                        <td><%= element.isVendor ? "vendoer" : "notVendoer" %></td>
+
                                                      
                                                         <td style="position:relative">
                                                             <a class="btn btn-secondary dropdown-toggle" href="#" data-toggle="dropdown">controllers</a>
                                                             <ul class="dropdown-menu " style="box-shadow: 3px 3px 7px rgba(0,0,0,0.1);" aria-labelledby="dropdownMenuButton2">
-                                                                <li><a href="editUser/<%= element.id %>" class="dropdown-item">تعديل</a></li>
+                                                                <li><a href="editAdmin/<%= element.id %>" class="dropdown-item">edit</a></li>
                                                                 <li>
-                                                                    <a href="/admin/userSearch/addUserSearch/<%= element.id %>" class="dropdown-item"> اضافه بحث للمستخدم</a>
-                                                                    <a href="/admin/userSearch/allUserSearch/<%= element.id %>" class="dropdown-item">بحث المستخدم</a>
-                                                                </li>
-                                                                <li><a href="userActevity/<%= element.id %>" class="dropdown-item"><%= !element.active ? "مفعل" : "غير مفعل" %></a></li>
-                                                                <li><hr class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <form class="d-inline-block" action="deleteUser/<%= element.id %>" method="post" style="width:100%">
-                                                                        <input type="hidden" name="userImage" value="<%= element.image %>">
-                                                                        <input type="hidden" name="userVendoer" value="<%= element.userVendorData ?  element.userVendorData.vendorImage : null %>">
-                                                                        <input type="hidden" name="userCommercFile" value="<%= element.userVendorData ?  element.userVendorData.commercFile : null %>">
-                                                                        <input type="hidden" name="fNmae" value="<%= element.fName %>">
-                                                                        <input type="hidden" name="lNmae" value="<%= element.lName %>">
-                                                                        <input type="hidden" name="email" value="<%= element.email%>">
-                                                                        <button class="dropdown-item d-block" style="cursor: pointer;width:100%;outline:0;border:0;background:none">حذف</button>
+                                                                    <form class="d-inline-block" action="activeAdmin" method="post" style="width:100%">
+                                                                        <input type="hidden" name="adminStatus" value="<%= element.active %>">
+                                                                        <input type="hidden" name="email" value="<%= element.email %>">
+                                                                        <button class="dropdown-item d-block" style="cursor: pointer;width:100%;outline:0;border:0;background:none"><%= !element.active ? "activate" : "remove activate" %></button>
                                                                     </form>
                                                                 </li>
+                                                                <li>
+                                                                    <form class="d-inline-block" action="deleteAdmin" method="post" style="width:100%">
+                                                                        <input type="hidden" name="image" value="<%= element.image %>">
+                                                                        <input type="hidden" name="email" value="<%= element.email%>">
+                                                                        <button class="dropdown-item d-block" style="cursor: pointer;width:100%;outline:0;border:0;background:none">delete</button>
+                                                                    </form>
+                                                                </li>
+                                                         
                                                             </ul>
                                                         </td>
                                                     </tr>

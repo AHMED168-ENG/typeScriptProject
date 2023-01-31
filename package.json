@@ -2,14 +2,14 @@
   "name": "deep_diving",
   "version": "1.0.0",
   "description": "this project care about diving",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "npm start",
-    "start": "nodemon"
+    "start": "nodemon",
+    "seeder": "npx sequelize-cli db:seed:all",
+    "migration": "sequelize db:migrate"
   },
   "dependencies": {
-    "@types/express-session": "^1.17.5",
-    "@types/express-validator": "^3.0.0",
     "axios": "^0.26.0",
     "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
@@ -28,6 +28,7 @@
     "http-errors": "^2.0.0",
     "http-status": "^1.5.0",
     "jsonwebtoken": "^8.5.1",
+    "localize": "^0.4.7",
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.4-lts.1",
@@ -36,17 +37,7 @@
     "pm2": "^5.1.2",
     "sequelize": "^6.16.1",
     "slugify": "^1.6.5",
-    "winston": "^3.8.2",
-    "@types/connect-flash": "^0.0.37",
-    "@types/cookie-parser": "^1.4.2",
-    "@types/cors": "^2.8.12",
-    "@types/ejs": "^3.1.0",
-    "@types/express": "^4.17.13",
-    "@types/http-errors": "^2.0.1",
-    "@types/jsonwebtoken": "^8.5.8",
-    "@types/morgan": "^1.9.3",
-    "@types/node": "^17.0.17",
-    "@types/nodemailer": "^6.4.4"
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",

@@ -1,0 +1,127 @@
+<%- include("../includes/head") %> 
+
+
+
+    <%- include("../includes/main-header") %> 
+    <%- include("../includes/aside") %> 
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-6 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/admin/dashpored">main </a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="/admin/users/"> fact </a>
+                                </li>
+                                <li class="breadcrumb-item active">add new fact
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Basic form layout section start -->
+                <section id="basic-form-layouts">
+                    <div class="row match-height">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title" id="basic-layout-form">add fact</h4>
+                                    <a class="heading-elements-toggle"><i
+                                            class="la la-ellipsis-v font-medium-3"></i></a>
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <%- include("../includes/notification") %> 
+                                <div class="card-content collapse show">
+                                    <div class="card-body">
+                                        <form enctype="multipart/form-data" class="form" method="post"  >
+                                            <div class="form-body main">
+                                                <h4 class="form-section"><i class="ft-home"></i>fact data</h4>
+
+                                                <div class="row main">
+                                                    
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> fact in arabic</label>
+                                                            <textarea type="text" class="form-control" placeholder="enter fact in arabic" name="title_ar"><%= bodyData.title_ar %></textarea>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.title_ar) { %>
+                                                                    <span class="text-danger"><%=validationError.title_ar[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> fact in english</label>
+                                                            <textarea  type="text" class="form-control" placeholder="enter fact in english" name="title_en"><%= bodyData.title_en %></textarea>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.title_en) { %>
+                                                                    <span class="text-danger"><%=validationError.title_en[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> number of this fact</label>
+                                                            <input type="number" class="form-control editor" value="<%-  bodyData.numberOfFact %>" placeholder=" enter number of this fact" name="numberOfFact">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.numberOfFact) { %>
+                                                                    <span class="text-danger"><%=validationError.numberOfFact[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mt-1">
+                                                            <input type="checkbox" name="active"
+                                                                value="1"
+                                                                class="switch "
+                                                                checked
+                                                                />
+                                                            <label
+                                                                class="card-title ml-1">state </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" class="btn btn-primary col-12">
+                                                <i class="la la-check-square-o"></i> save
+                                            </button>
+                                        </form>
+
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Basic form layout section end -->
+            </div>
+        </div>
+    </div>
+
+    <%- include("../includes/footer") %> 
+    <%- include("../includes/footerScript") %> 
+ 
+</body>
+</html>

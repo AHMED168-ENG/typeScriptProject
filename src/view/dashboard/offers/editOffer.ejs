@@ -1,0 +1,184 @@
+<%- include("../includes/head") %> 
+
+
+
+    <%- include("../includes/main-header") %> 
+    <%- include("../includes/aside") %> 
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-6 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/admin/dashpored">main </a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="/admin/users/"> offers </a>
+                                </li>
+                                <li class="breadcrumb-item active">edit offer
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Basic form layout section start -->
+                <section id="basic-form-layouts">
+                    <div class="row match-height">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title" id="basic-layout-form"> edit offer</h4>
+                                    <a class="heading-elements-toggle"><i
+                                            class="la la-ellipsis-v font-medium-3"></i></a>
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <%- include("../includes/notification") %> 
+                                <div class="card-content collapse show">
+                                    <div class="card-body">
+                                        <form enctype="multipart/form-data" class="form" method="post"  >
+                                            <div class="form-body main">
+                                                <h4 class="form-section"><i class="ft-home"></i>offer information</h4>
+
+                                                <div class="row main">
+                                                    
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">title in arabic</label>
+                                                            <textarea type="text" class="form-control" placeholder="enter title in arabic" name="title_ar"><%= bodyData ? bodyData.title_ar : offer.title_ar %></textarea>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.title_ar) { %>
+                                                                    <span class="text-danger"><%=validationError.title_ar[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> title in english</label>
+                                                            <textarea  type="text" class="form-control editor" placeholder="enter title in english" name="title_en"><%- bodyData ? bodyData.title_en : offer.title_en %></textarea>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.title_en) { %>
+                                                                    <span class="text-danger"><%=validationError.title_en[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> content in arabic </label>
+                                                            <textarea type="text" class="form-control editor" placeholder=" enter content with arabic " name="body_ar"><%-  bodyData ? bodyData.body_ar : offer.body_ar %></textarea>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.body_ar) { %>
+                                                                    <span class="text-danger"><%=validationError.body_ar[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> content in english</label>
+                                                            <textarea type="text" class="form-control" placeholder="enter content in english" name="body_en"><%-  bodyData ? bodyData.body_en : offer.body_en %></textarea>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.body_en) { %>
+                                                                    <span class="text-danger"><%=validationError.body_en[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="image col-12" >
+                                                        <img style="width:300px;height:300px" src="/assets/dashboard/images/Offers/<%= offer.image.split("--")[0] %>" alt="">
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2"> user image</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" multiple name="image" class="custom-file-input">
+                                                                <input type="hidden" name="oldImage" value="<%=offer.image  %>" class="custom-file-input">
+                                                                <label class="custom-file-label">Choose file</label>
+                                                            </div>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.image) { %>
+                                                                    <span class="text-danger"><%=validationError.image[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                     
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mt-1">
+                                                            <input type="checkbox" name="active"
+                                                                value="1"
+                                                                class="switch "
+                                                                <%- offer.active ? "checked" : "" %>
+                                                                
+                                                                />
+                                                            <label
+                                                                class="card-title ml-1">state </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" class="btn btn-primary col-12">
+                                                <i class="la la-check-square-o"></i> save
+                                            </button>
+                                        </form>
+
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Basic form layout section end -->
+            </div>
+        </div>
+    </div>
+
+    <%- include("../includes/footer") %> 
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+    <script>
+        const allEditor = document.querySelectorAll( '.editor' )
+        allEditor.forEach(ele => {
+        ClassicEditor
+        .create( ele,{
+            toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList','blockQuote' ],
+            heading: {
+                options: [
+                    { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                    { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                    { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                ]
+            },
+            entities : false,
+            htmlDecodeOutput:false}
+            )
+        .catch( error => {
+            console.error( error );
+        } );
+        })
+        
+    </script>
+    <%- include("../includes/footerScript") %> 
+ 
+</body>
+</html>

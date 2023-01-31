@@ -10,10 +10,10 @@
       data-menu="menu-navigation"
     >
       <li class="nav-item active">
-        <a href="/dashboard/dashpored"
+        <a href="/dashboard"
           ><i class="la la-mouse-pointer"></i
           ><span class="menu-title" data-i18n="nav.add_on_drag_drop.main"
-            >الرئيسية
+            ><%= asideLocalization("main") %>
           </span></a
         >
       </li>
@@ -21,7 +21,9 @@
       <li class="nav-item">
         <a href=""
           ><i class="la la-home"></i>
-          <span class="menu-title" data-i18n="nav.dash.main">الادمن</span>
+          <span class="menu-title" data-i18n="nav.dash.main"
+            ><%= asideLocalization("admin") %></span
+          >
           <span
             class="badge badge badge-info badge-pill float-right mr-2"
           ></span>
@@ -30,10 +32,10 @@
           <li class="">
             <a
               class="menu-item"
-              href="/dashboard/allAdmins/"
+              href="/dashboard/allAdmins"
               data-i18n="nav.dash.ecommerce"
             >
-              عرض كل الادمن
+              <%= asideLocalization("allAdmins") %>
             </a>
           </li>
           <li class="">
@@ -41,7 +43,157 @@
               class="menu-item"
               href="/dashboard/addAdmin"
               data-i18n="nav.dash.crypto"
-              >أضافة ادمن
+              ><%= asideLocalization("addAdmin") %>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a href=""
+          ><i class="la la-home"></i>
+          <span class="menu-title" data-i18n="nav.dash.main"
+            ><%= asideLocalization("course") %></span
+          >
+          <span
+            class="badge badge badge-info badge-pill float-right mr-2"
+          ></span>
+        </a>
+        <ul class="menu-content">
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/allCourses"
+              data-i18n="nav.dash.ecommerce"
+            >
+              <%= asideLocalization("allCourses") %>
+            </a>
+          </li>
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/addCourse"
+              data-i18n="nav.dash.crypto"
+              ><%= asideLocalization("addCourse") %>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a href=""
+          ><i class="la la-home"></i>
+          <span class="menu-title" data-i18n="nav.dash.main"
+            ><%= asideLocalization("carosal") %></span
+          >
+          <span
+            class="badge badge badge-info badge-pill float-right mr-2"
+          ></span>
+        </a>
+        <ul class="menu-content">
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/allCarosals"
+              data-i18n="nav.dash.ecommerce"
+            >
+              <%= asideLocalization("allCarosal") %>
+            </a>
+          </li>
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/addCarosal"
+              data-i18n="nav.dash.crypto"
+            >
+              <%= asideLocalization("addCarosal") %>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href=""
+          ><i class="la la-home"></i>
+          <span class="menu-title" data-i18n="nav.dash.main">
+            <%= asideLocalization("offers") %></span
+          >
+          <span
+            class="badge badge badge-info badge-pill float-right mr-2"
+          ></span>
+        </a>
+        <ul class="menu-content">
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/allOffers"
+              data-i18n="nav.dash.ecommerce"
+            >
+              <%= asideLocalization("allOffers") %>
+            </a>
+          </li>
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/addOffer"
+              data-i18n="nav.dash.crypto"
+            >
+              <%= asideLocalization("addOffer") %>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href=""
+          ><i class="la la-home"></i>
+          <span class="menu-title" data-i18n="nav.dash.main">facts</span>
+          <span
+            class="badge badge badge-info badge-pill float-right mr-2"
+          ></span>
+        </a>
+        <ul class="menu-content">
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/allfacts"
+              data-i18n="nav.dash.ecommerce"
+            >
+              all facts
+            </a>
+          </li>
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/addFact"
+              data-i18n="nav.dash.crypto"
+              >add fact
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href=""
+          ><i class="la la-home"></i>
+          <span class="menu-title" data-i18n="nav.dash.main">instructors</span>
+          <span
+            class="badge badge badge-info badge-pill float-right mr-2"
+          ></span>
+        </a>
+        <ul class="menu-content">
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/allInstructors"
+              data-i18n="nav.dash.ecommerce"
+            >
+              all instructors
+            </a>
+          </li>
+          <li class="">
+            <a
+              class="menu-item"
+              href="/dashboard/addInstructor"
+              data-i18n="nav.dash.crypto"
+              >add instructor
             </a>
           </li>
         </ul>

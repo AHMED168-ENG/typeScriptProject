@@ -166,3 +166,22 @@
     setCurrentTime: false,
   });
 </script>
+<script>
+  const languageControlle = document.querySelectorAll(".language ul li");
+  languageControlle.forEach((ele) => {
+    ele.onclick = function () {
+      const lang = ele.getAttribute("dataLang");
+      $.ajax({
+        method: "get",
+        url: "/setLanguage/" + lang,
+        success: (result) => {
+          console.log("success");
+          window.location.reload();
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
+    };
+  });
+</script>

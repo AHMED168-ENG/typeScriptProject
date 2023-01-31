@@ -1,0 +1,224 @@
+<%- include("../includes/head") %> 
+
+
+
+    <%- include("../includes/main-header") %> 
+    <%- include("../includes/aside") %> 
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-6 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/admin/dashpored">main </a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="/admin/users/"> admins </a>
+                                </li>
+                                <li class="breadcrumb-item active">edit admin
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Basic form layout section start -->
+                <section id="basic-form-layouts">
+                    <div class="row match-height">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title" id="basic-layout-form"> edit admin</h4>
+                                    <a class="heading-elements-toggle"><i
+                                            class="la la-ellipsis-v font-medium-3"></i></a>
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <%- include("../includes/notification") %> 
+                                <div class="card-content collapse show">
+                                    <div class="card-body">
+                                        <form enctype="multipart/form-data" class="form" method="post"  >
+                                            <div class="form-body main">
+                                                <h4 class="form-section"><i class="ft-home"></i> admin information</h4>
+
+                                                <div class="row main">
+                                                    
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> first name</label>
+                                                            <input value="<%= bodyData ? bodyData.fName : admin.fName %>" type="text" class="form-control" placeholder="enter first name" name="fName">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.fName) { %>
+                                                                    <span class="text-danger"><%=validationError.fName[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">last name </label>
+                                                            <input  value="<%= bodyData ? bodyData.lName : admin.lName %>" type="text" class="form-control" placeholder="enter last name" name="lName">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.lName) { %>
+                                                                    <span class="text-danger"><%=validationError.lName[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> age </label>
+                                                            <input  value="<%= bodyData ? bodyData.age : admin.age %>" type="number" class="form-control" placeholder="enter age" name="age">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.age) { %>
+                                                                    <span class="text-danger"><%=validationError.age[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> email </label>
+                                                            <input  value="<%= bodyData ? bodyData.email : admin.email %>" type="text" class="form-control" placeholder="enter your email" name="email">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.email) { %>
+                                                                    <span class="text-danger"><%=validationError.email[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> password</label>
+                                                            <input  type="password" value="<%= bodyData ? bodyData.password : ""  %>" class="form-control" placeholder="enter password if you wont" name="password">
+                                                                <input type="hidden"  name="oldPassword" value="<%= admin.password %>" class="custom-file-input">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.password) { %>
+                                                                    <span class="text-danger"><%=validationError.password[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> enter password again</label>
+                                                            <input value="<%= bodyData ? bodyData.confirmPassword : "" %>" type="password" class="form-control" placeholder="enter password again" name="confirmPassword">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.confirmPassword) { %>
+                                                                    <span class="text-danger"><%=validationError.confirmPassword[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> addres </label>
+                                                            <input value="<%= bodyData ? bodyData.addres : admin.addres %>" type="text" class="form-control" placeholder="enter addres" name="addres">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.addres) { %>
+                                                                    <span class="text-danger"><%=validationError.addres[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> gender </label>
+                                                            <select type="text" class="form-control"  name="gender">
+                                                                <option value="1" <%= (bodyData ? bodyData.gender : admin.gender)  == "1" ? "selected" : "" %>>man</option>
+                                                                <option value="0" <%= (bodyData ? bodyData.gender : admin.gender) == "0" ? "selected" : "" %>>wemon</option>
+                                                            </select>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.gender) { %>
+                                                                    <span class="text-danger"><%=validationError.gender[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> mobile </label>
+                                                            <input  value="<%= bodyData ? bodyData.mobile : admin.mobile %>" type="number" class="form-control" placeholder="enter your mobile" name="mobile">
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.mobile) { %>
+                                                                    <span class="text-danger"><%=validationError.mobile[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+
+                                                   <div class="image col-12" >
+                                                        <img style="width:300px;height:300px" src="/assets/dashboard/images/admins/<%= admin.image.split("--")[0] %>" alt="">
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2"> user image</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" multiple name="image" class="custom-file-input">
+                                                                <input type="hidden"  name="oldImage" value="<%= admin.image %>" class="custom-file-input">
+                                                                <label class="custom-file-label">Choose file</label>
+                                                            </div>
+                                                            <% if (validationError) { %>
+                                                                <% if (validationError.image) { %>
+                                                                    <span class="text-danger"><%=validationError.image[0].msg %></span>
+                                                                <% } %>
+                                                            <% } %>
+                                                     
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mt-1">
+                                                            <input type="checkbox" name="active"
+                                                                value="1"
+                                                                class="switch "
+                                                                <%= bodyData ? bodyData.active : admin.active ? "checked" : "" %>
+                                                                />
+                                                            <label
+                                                                class="card-title ml-1">state </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" class="btn btn-primary col-12">
+                                                <i class="la la-check-square-o"></i> save
+                                            </button>
+                                        </form>
+
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Basic form layout section end -->
+            </div>
+        </div>
+    </div>
+
+    <%- include("../includes/footer") %> 
+    <%- include("../includes/footerScript") %> 
+ 
+</body>
+</html>
